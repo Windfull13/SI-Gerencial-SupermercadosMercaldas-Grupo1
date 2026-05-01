@@ -138,7 +138,7 @@ SI-Gerencial-SupermercadosMercaldas-Grupo1/
 ## Contacto y Más Información
 
 - **Repositorio GitHub:** https://github.com/Windfull13/SI-Gerencial-SupermercadosMercaldas-Grupo1
-- **Carpeta Google Drive:** [Enlace del equipo]
+- **Carpeta Google Drive:** https://drive.google.com/drive/folders/1HzZ6FALgd64nhbsqDehKDSHaXstNTDp8?usp=sharing
 - **Universidad:** Universidad de Caldas
 - **Asignatura:** Desarrollo de Sistemas de Información Empresarial
 
