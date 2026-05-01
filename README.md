@@ -2,7 +2,7 @@
 
 ## Descripción del Proyecto
 
-Sistema de Información Gerencial para **Supermercados Mercaldas**. Este proyecto es parte de la asignatura **Sistemas de Información Gerencial** de la carrera de Ingeniería en Informática de la Universidad de Caldas.
+Sistema de Información Gerencial para **Supermercados Mercaldas**. Este proyecto es parte de la asignatura **Desarrollo de Sistemas de Información Empresarial** de la carrera de Ingeniería en Informática de la Universidad de Caldas.
 
 El objetivo es analizar, diseñar e implementar un sistema de información que mejore la eficiencia operativa de la empresa, enfocándose en la gestión integral de procesos y toma de decisiones basada en datos.
 
@@ -104,7 +104,7 @@ SI-Gerencial-SupermercadosMercaldas-Grupo1/
 | **Shirley Ximena Ramírez** | Integrante 2 |
 
 **Grupo:** 1  
-**Curso:** Sistemas de Información Gerencial  
+**Curso:** Desarrollo de Sistemas de Información Empresarial  
 **Universidad:** Universidad de Caldas - Ingeniería en Informática  
 **Fecha de Inicio:** 30 de abril de 2026
 
@@ -140,7 +140,7 @@ SI-Gerencial-SupermercadosMercaldas-Grupo1/
 - **Repositorio GitHub:** https://github.com/Windfull13/SI-Gerencial-SupermercadosMercaldas-Grupo1
 - **Carpeta Google Drive:** [Enlace del equipo]
 - **Universidad:** Universidad de Caldas
-- **Asignatura:** Sistemas de Información Gerencial
+- **Asignatura:** Desarrollo de Sistemas de Información Empresarial
 
 ---
 
