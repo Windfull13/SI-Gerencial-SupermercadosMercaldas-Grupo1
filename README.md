@@ -1,147 +1,83 @@
-﻿# SI-Gerencial-SupermercadosMercaldas-Grupo1
+# SI-Gerencial-SupermercadosMercaldas-Grupo1
 
-## Descripción del Proyecto
+**SIGIM — Sistema de Gestión de Inventarios Mercaldas**
 
-Sistema de Información Gerencial para **Supermercados Mercaldas**. Este proyecto es parte de la asignatura **Desarrollo de Sistemas de Información Empresarial** de la carrera de Ingeniería en Informática de la Universidad de Caldas.
+Sistema de información gerencial para el control de inventarios del supermercado Mercaldas, desarrollado como proyecto de aula para la Universidad de Caldas.
 
-El objetivo es analizar, diseñar e implementar un sistema de información que mejore la eficiencia operativa de la empresa, enfocándose en la gestión integral de procesos y toma de decisiones basada en datos.
-
----
-
-## Información de la Empresa
-
-| Campo | Valor |
-|-------|-------|
-| **Nombre** | Supermercados Mercaldas |
-| **Sector** | Comercio / Retail |
-| **Actividad Principal** | Venta de productos de consumo masivo (alimentos, aseo, hogar, etc.) |
-| **Tamaño** | Aproximadamente 300-500 empleados |
-| **Ubicación** | Manizales, Caldas |
-| **Misión** | Brindar productos de calidad a precios accesibles, satisfaciendo las necesidades de los clientes de la región |
-
-### Principales Áreas y Departamentos
-
-- Ventas
-- Inventario / Bodega
-- Compras
-- Cajas / Facturación
-- Administración
-- Atención al cliente
-
-### Principales Problemas Identificados
-
-- Desactualización de inventarios
-- Filas largas en cajas
-- Errores en precios o facturación
-- Falta de integración total de la información
-- Inconsistencias entre inventario físico y digital
-- Procesos manuales que generan demoras
+**Integrantes:** Ángelo Franco Orozco · Shirley Ximena Ramírez López
+**Stack:** Django 4.2 · PostgreSQL · Bootstrap 5
 
 ---
 
-## Proceso Seleccionado para Sistematizar
+## Estructura del repositorio
 
-### **Gestión de Inventario**
-
-**Justificación:** Proceso crítico para el negocio con múltiples fallas y gran potencial de mejora mediante un sistema de información integrado.
-
-**Tipo:** Operativo  
-**Área Responsable:** Bodega / Administración  
-**Estado Actual del SI:** Parcial (sistema POS + registros manuales)
-
-#### Problemas Actuales Identificados
-
-1. **Sincronización deficiente:** Diferencias entre inventario físico y digital
-2. **Registro manual de ingresos:** Errores al digitar cantidades y referencias
-3. **Procesos lentos:** Conteos manuales y generación de pedidos sin automatización
-4. **Duplicidad de datos:** Registros manuales adicionales al sistema
-5. **Información incompleta:** Falta de trazabilidad en recepciones
-
-#### Veredicto de Rediseño
-
-**⚠️ Rediseño Parcial** — El proceso funciona pero presenta fallas en registro y actualización que requieren optimización antes de implementar el sistema de información.
-
----
-
-## Estructura del Repositorio
-
-```
+```text
 SI-Gerencial-SupermercadosMercaldas-Grupo1/
-├── /docs              — Documentos de análisis y entregables
-├── /diagramas         — Mapas y diagramas de procesos
-├── /src               — Código fuente del sistema (en desarrollo)
-└── README.md          — Este archivo
+├── README.md
+├── docs/
+├── frontend/
+│   ├── README.md
+│   ├── templates/
+│   └── static/
+├── mockups/
+├── reports/
+└── backend/
+    ├── manage.py
+    ├── requirements.txt
+    ├── seed_data.py
+    ├── seed_data2.py
+    ├── database/
+    ├── inventario/
+    ├── proveedores/
+    ├── usuarios/
+    ├── sigim/
+    └── templates/
 ```
 
-### Contenido por Carpeta
+---
 
-- **`/docs`**
-  - Especificaciones de requisitos
-  - Propuestas de solución
-  - Reportes de análisis
-  - Documentación técnica
-  - Actas de reuniones
+## Estructura funcional
 
-- **`/diagramas`**
-  - Diagrama actual del proceso de gestión de inventario
-  - Diagrama propuesto (mejorado)
-  - Diagramas ER de la base de datos
-  - Diagramas UML del sistema
-
-- **`/src`**
-  - Código backend (cuando se desarrolle)
-  - Código frontend (cuando se desarrolle)
-  - Scripts de base de datos
-  - Configuraciones
+- `backend/`: código Django, modelos, vistas, formularios y seeds.
+- `frontend/`: plantillas HTML y estáticos del sistema.
+- `docs/`: SRS, UML, trazabilidad y manuales.
+- `mockups/`: capturas y prototipos aprobados.
+- `reports/`: consultas y evidencias de reportes.
 
 ---
 
-## Integrantes del Grupo
+## Instalación rápida
 
-| Nombre | Rol |
-|--------|-----|
-| **Ángelo Franco Orozco** | Integrante 1 |
-| **Shirley Ximena Ramírez** | Integrante 2 |
-
-**Grupo:** 1  
-**Curso:** Desarrollo de Sistemas de Información Empresarial  
-**Universidad:** Universidad de Caldas - Ingeniería en Informática  
-**Fecha de Inicio:** 30 de abril de 2026
+1. Crear y activar un entorno virtual.
+2. Instalar dependencias desde `backend/requirements.txt`.
+3. Configurar variables de entorno.
+4. Ejecutar migraciones.
+5. Cargar datos iniciales con `backend/seed_data.py` y `backend/database/seed_extended.py`.
+6. Iniciar el servidor Django.
 
 ---
 
-## Cronograma del Proyecto
+## Funcionalidades implementadas
 
-- **Entrega 1:** Identificación de la empresa y análisis de procesos ✅
-- **Entrega 2:** Análisis detallado del proceso y rediseño propuesto
-- **Entrega 3:** Diseño del sistema de información (modelos, base de datos)
-- **Entrega 4:** Prototipo e implementación
-- **Entrega 5:** Sistema funcional y documentación final
-
----
-
-## Estado del Proyecto
-
-🔄 **En Desarrollo** — Fase 1: Análisis y Planificación
+- Autenticación de usuarios.
+- Dashboard con indicadores.
+- Gestión de productos.
+- Registro de entradas y salidas.
+- Alertas por stock bajo.
+- Órdenes de compra sugeridas.
+- Gestión de proveedores.
+- Reportes de inventario y movimientos.
 
 ---
 
-## Cómo Contribuir
+## Documentación clave
 
-1. Clonar el repositorio: `git clone https://github.com/Windfull13/SI-Gerencial-SupermercadosMercaldas-Grupo1.git`
-2. Crear una rama para los cambios: `git checkout -b feature/descripcion`
-3. Hacer commits descriptivos
-4. Hacer push y crear un Pull Request
-
----
-
-## Contacto y Más Información
-
-- **Repositorio GitHub:** https://github.com/Windfull13/SI-Gerencial-SupermercadosMercaldas-Grupo1
-- **Carpeta Google Drive:** https://drive.google.com/drive/folders/1HzZ6FALgd64nhbsqDehKDSHaXstNTDp8?usp=sharing
-- **Universidad:** Universidad de Caldas
-- **Asignatura:** Desarrollo de Sistemas de Información Empresarial
+- [SRS IEEE 830](docs/SRS_IEEE830.md)
+- [Guía UML SIGIM](docs/UML_SIGIM.md)
+- [Matriz de trazabilidad](docs/matriz_trazabilidad.md)
 
 ---
 
-*Última actualización: 1 de mayo de 2026*
+## Estado actual
+
+El repositorio quedó reorganizado para que el frontend viva dentro de `frontend/` y el backend dentro de `backend/`, alineado con la guía de entrega.
