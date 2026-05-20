@@ -51,7 +51,7 @@ SIGIM-main/
 1. Crear y activar un entorno virtual.
 2. Instalar dependencias con `pip install -r backend/requirements.txt`.
 3. Configurar variables de entorno copiando `.env.example` a `.env`.
-4. Crear la base de datos `sigim_db` en PostgreSQL.
+4. Crear la base de datos `sigim_db` en PostgreSQL usando `postgres` / `1234` si no tienes un `.env` propio.
 5. Ejecutar migraciones con `python backend/manage.py migrate`.
 6. Cargar datos iniciales con `python backend/manage.py shell < database/seed_data.py`.
 7. Iniciar el servidor con `python backend/manage.py runserver`.
@@ -100,7 +100,7 @@ cp .env.example .env
 ```
 Edita el archivo `.env` con tu contraseña de PostgreSQL:
 ```text
-DB_PASSWORD=tu_contraseña_aqui
+DB_PASSWORD=1234
 ```
 
 ### 7. Ejecutar migraciones

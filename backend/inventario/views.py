@@ -369,3 +369,54 @@ def busqueda_global(request):
         'titulo': f'Busqueda: {query}',
     }
     return render(request, 'inventario/busqueda.html', context)
+
+
+@login_required
+def reportes(request):
+    resumen = {
+        'productos_total': Producto.objects.filter(activo=True).count(),
+        'productos_bajo_stock': Producto.objects.filter(activo=True).extra(
+            where=['cantidad_disponible > 0 AND cantidad_disponible <= stock_minimo']
+        ).count(),
+        'productos_sin_stock': Producto.objects.filter(activo=True, cantidad_disponible=0).count(),
+        'proveedores_total': Proveedor.objects.count(),
+        'movimientos_total': MovimientoInventario.objects.count(),
+        'alertas_total': AlertaStock.objects.count(),
+        'ordenes_total': OrdenCompra.objects.count(),
+    }
+
+    productos_criticos = Producto.objects.filter(activo=True).select_related('proveedor').extra(
+        where=['cantidad_disponible <= stock_minimo']
+    ).order_by('cantidad_disponible', 'nombre')[:8]
+
+    movimientos_por_tipo = MovimientoInventario.objects.values('tipo').annotate(
+        total=Count('id'),
+        unidades=Sum('cantidad'),
+    ).order_by('tipo')
+
+    ordenes_por_estado = OrdenCompra.objects.values('estado').annotate(
+        total=Count('id')
+    ).order_by('estado')
+
+    categorias = Producto.objects.filter(activo=True).values('categoria').annotate(
+        total=Count('id')
+    ).order_by('categoria')
+
+    alertas_recientes = AlertaStock.objects.select_related('producto').order_by('-fecha')[:10]
+    ordenes_recientes = OrdenCompra.objects.select_related('producto', 'proveedor', 'usuario').order_by('-fecha')[:10]
+    movimientos_recientes = MovimientoInventario.objects.select_related(
+        'producto', 'usuario_responsable', 'proveedor'
+    ).order_by('-fecha')[:10]
+
+    context = {
+        'resumen': resumen,
+        'productos_criticos': productos_criticos,
+        'movimientos_por_tipo': movimientos_por_tipo,
+        'ordenes_por_estado': ordenes_por_estado,
+        'categorias': categorias,
+        'alertas_recientes': alertas_recientes,
+        'ordenes_recientes': ordenes_recientes,
+        'movimientos_recientes': movimientos_recientes,
+        'titulo': 'Reportes e informes',
+    }
+    return render(request, 'inventario/reportes.html', context)

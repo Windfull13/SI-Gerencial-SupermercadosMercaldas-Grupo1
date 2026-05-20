@@ -126,6 +126,9 @@
   <a href="{% url 'inventario:ordenes' %}" class="nav-link {% if 'ordenes' in request.path %}active{% endif %}">
     <i class="bi bi-cart-check"></i> Ordenes
   </a>
+  <a href="{% url 'inventario:reportes' %}" class="nav-link {% if 'reportes' in request.path %}active{% endif %}">
+    <i class="bi bi-graph-up"></i> Reportes
+  </a>
   <a href="{% url 'proveedores:lista' %}" class="nav-link {% if 'proveedores' in request.path %}active{% endif %}">
     <i class="bi bi-truck"></i> Proveedores
   </a>
