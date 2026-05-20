@@ -14,6 +14,7 @@ Sistema de información gerencial para el control de inventarios del supermercad
 ```text
 SI-Gerencial-SupermercadosMercaldas-Grupo1/
 ├── README.md
+├── database/
 ├── docs/
 ├── frontend/
 │   ├── README.md
@@ -24,9 +25,6 @@ SI-Gerencial-SupermercadosMercaldas-Grupo1/
 └── backend/
     ├── manage.py
     ├── requirements.txt
-    ├── seed_data.py
-    ├── seed_data2.py
-    ├── database/
     ├── inventario/
     ├── proveedores/
     ├── usuarios/
@@ -38,7 +36,8 @@ SI-Gerencial-SupermercadosMercaldas-Grupo1/
 
 ## Estructura funcional
 
-- `backend/`: código Django, modelos, vistas, formularios y seeds.
+- `backend/`: código Django, modelos, vistas y formularios.
+- `database/`: dump PostgreSQL y scripts de carga de datos.
 - `frontend/`: plantillas HTML y estáticos del sistema.
 - `docs/`: SRS, UML, trazabilidad y manuales.
 - `mockups/`: capturas y prototipos aprobados.
@@ -52,7 +51,7 @@ SI-Gerencial-SupermercadosMercaldas-Grupo1/
 2. Instalar dependencias desde `backend/requirements.txt`.
 3. Configurar variables de entorno.
 4. Ejecutar migraciones.
-5. Cargar datos iniciales con `backend/seed_data.py` y `backend/database/seed_extended.py`.
+5. Cargar datos iniciales con `database/seed_data.py` y `database/seed_extended.py`.
 6. Iniciar el servidor Django.
 
 ---
