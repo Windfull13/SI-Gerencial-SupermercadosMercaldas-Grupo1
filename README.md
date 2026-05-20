@@ -1,34 +1,60 @@
 # SIGIM — Sistema de Gestión de Inventarios Mercaldas
 
-**Universidad de Caldas** | Sistemas de Información Gerencial  
-**Integrantes:** Ángelo Franco Orozco · Shirley Ximena Ramírez López  
+Sistema de información gerencial para el control de inventarios del supermercado Mercaldas, desarrollado como proyecto de aula para la Universidad de Caldas.
+
+**Integrantes:** Ángelo Franco Orozco · Shirley Ximena Ramírez López
+
 **Stack:** Django 4.2 · PostgreSQL · Bootstrap 5
 
 ---
 
-## Estructura del proyecto
+## Estructura del repositorio
 
-```
-README.md
+```text
+SIGIM-main/
+├── README.md
+├── .gitignore
 ├── backend/
 │   ├── manage.py
 │   ├── requirements.txt
-│   ├── sigim/              # Configuración Django
-│   ├── inventario/         # App principal
+│   ├── inventario/
 │   ├── proveedores/
 │   ├── usuarios/
-│   └── .env.example
-├── frontend/
-│   ├── templates/
-│   └── static/
+│   └── sigim/
 ├── database/
 │   ├── sigim.sql
 │   ├── seed_data.py
 │   └── seed_data2.py
 ├── docs/
+├── frontend/
+│   ├── templates/
+│   └── static/
 ├── mockups/
 └── reports/
 ```
+
+---
+
+## Estructura funcional
+
+- `backend/`: código Django, modelos, vistas, formularios y configuración.
+- `database/`: dump PostgreSQL y scripts de carga de datos.
+- `frontend/`: plantillas HTML y archivos estáticos del sistema.
+- `docs/`: documentación del proyecto, manuales y trazabilidad.
+- `mockups/`: prototipos y capturas de diseño.
+- `reports/`: consultas y evidencias de reportes.
+
+---
+
+## Instalación rápida
+
+1. Crear y activar un entorno virtual.
+2. Instalar dependencias con `pip install -r backend/requirements.txt`.
+3. Configurar variables de entorno copiando `.env.example` a `.env`.
+4. Crear la base de datos `sigim_db` en PostgreSQL.
+5. Ejecutar migraciones con `python backend/manage.py migrate`.
+6. Cargar datos iniciales con `python backend/manage.py shell < database/seed_data.py`.
+7. Iniciar el servidor con `python backend/manage.py runserver`.
 
 ---
 
@@ -43,7 +69,7 @@ README.md
 ```bash
 cd ~/Desktop
 # Si lo descargaste como ZIP, descomprime y entra a la carpeta
-cd sigim
+cd SIGIM-main
 ```
 
 ### 3. Crear entorno virtual
@@ -73,7 +99,7 @@ CREATE DATABASE sigim_db;
 cp .env.example .env
 ```
 Edita el archivo `.env` con tu contraseña de PostgreSQL:
-```
+```text
 DB_PASSWORD=tu_contraseña_aqui
 ```
 
@@ -109,19 +135,26 @@ Abre el navegador en: **http://127.0.0.1:8000**
 
 ## Funcionalidades implementadas
 
-- ✅ Login con autenticación Django
-- ✅ Dashboard con KPIs (total productos, bajo stock, sin stock, alertas)
-- ✅ Lista de productos con búsqueda y filtros (nombre, categoría, estado)
-- ✅ Detalle de producto con historial de movimientos
-- ✅ Registro de entradas de inventario (RF-05)
-- ✅ Registro de salidas con actualización automática (RF-02)
-- ✅ Alertas automáticas por stock bajo (RF-04)
-- ✅ Generación automática de sugerencia de orden de compra (RF-08)
-- ✅ Aprobación de órdenes de compra
-- ✅ Panel de administración Django en `/admin/`
+- Login con autenticación Django.
+- Dashboard con KPIs de inventario.
+- Lista de productos con búsqueda y filtros.
+- Detalle de producto con historial de movimientos.
+- Registro de entradas y salidas de inventario.
+- Alertas automáticas por stock bajo.
+- Generación de sugerencias de orden de compra.
+- Aprobación de órdenes de compra.
+- Panel de administración Django en `/admin/`.
 
 ---
 
-## Módulo admin Django
+## Documentación clave
 
-Accede a `/admin/` con usuario `admin` / `admin1234` para gestión avanzada de todos los modelos.
+- [SRS IEEE 830](docs/SRS_IEEE830.md)
+- [Guía UML SIGIM](docs/UML_SIGIM.md)
+- [Matriz de trazabilidad](docs/matriz_trazabilidad.md)
+
+---
+
+## Estado actual
+
+El repositorio ya quedó reorganizado para que el backend viva en `backend/`, el frontend en `frontend/`, y los datos y scripts en `database/`, dejando `docs/`, `mockups/` y `reports/` como carpetas independientes.
